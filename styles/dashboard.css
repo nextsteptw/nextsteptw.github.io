@@ -1,0 +1,25 @@
+.smart-header {
+    background: var(--primary); padding: 30px 20px;
+    display: flex; gap: 15px; border-radius: 0 0 30px 30px;
+}
+.card { background: #fff; border-radius: 15px; padding: 15px; box-shadow: var(--card-shadow); }
+.today-status { flex: 2; }
+.countdown-card { flex: 1; text-align: center; color: var(--accent); }
+.today-status h1 { margin: 5px 0; font-size: 1.5rem; }
+.badge { background: var(--primary); color: #fff; display: inline-block; padding: 2px 8px; border-radius: 5px; font-size: 0.7rem; }
+
+.timeline-item {
+    background: #fff; padding: 15px; margin-bottom: 10px;
+    border-radius: 12px; border-left: 5px solid var(--primary);
+}
+.mistake-tags .tag {
+    display: inline-block; background: #fff; padding: 6px 12px;
+    border-radius: 20px; margin: 4px; border: 1px solid #ddd; font-size: 0.9rem;
+}
+
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #fff; z-index: 2000; display: none; flex-direction: column;
+}
+.modal.show { display: flex; }
+.modal-header { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Campus Flow</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- 1. 智慧今日卡片 & 5. 大考倒數 -->
+    <header class="smart-header">
+        <div class="card today-status" id="smart-card">
+            <div class="badge">現在課程</div>
+            <h1 id="current-class-name">準備中...</h1>
+            <p id="next-class-info">下一堂：讀取中</p>
+        </div>
+        <div class="card countdown-card">
+            <div class="count-num" id="countdown-days">--</div>
+            <div class="count-label">天後段考</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 2. 今日行程流 -->
+        <section class="section">
+            <h2 class="title">今日行程流</h2>
+            <div class="timeline" id="timeline-list"></div>
+        </section>
+
+        <!-- 跨網域功能：讀取常錯單字 -->
+        <section class="section">
+            <h2 class="title">常錯單字 (同步自網站 A)</h2>
+            <div class="mistake-tags" id="mistake-container">載入中...</div>
+        </section>
+    </main>
+
+    <!-- 3. 週課表 & 4. 待辦清單 (透過 Overlay 顯示) -->
+    <div id="full-screen-modal" class="modal">
+        <div class="modal-header">
+            <h3 id="modal-title">標題</h3>
+            <button onclick="closeModal()">✕</button>
+        </div>
+        <div class="modal-body" id="modal-content"></div>
+    </div>
+
+    <!-- 底部導覽 -->
+    <nav class="bottom-nav">
+        <button class="nav-btn active" onclick="switchTab('home')">🏠<span>首頁</span></button>
+        <button class="nav-btn" onclick="openWeeklyGrid()">📅<span>週課表</span></button>
+        <button class="nav-btn" onclick="openTodoList()">✅<span>待辦</span></button>
+    </nav>
+
+    <!-- 跨網域通訊橋樑 (請更換成你網站 A 的實際 bridge.html 網址) -->
+    <iframe id="data-bridge" src="https://your-site-a.github.io/bridge.html" style="display:none;"></iframe>
+
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/sync.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
